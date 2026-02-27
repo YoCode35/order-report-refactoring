@@ -2,7 +2,7 @@ import { Customer } from '../domain/Customer';
 import { CsvReader } from '../infrastructure/CsvReader';
 
 export class CustomerRepository {
-  constructor(private reader: CsvReader) {}
+  constructor(private reader: CsvReader) { }
 
   load(path: string): Record<string, Customer> {
     const rows = this.reader.read(path);
@@ -15,7 +15,8 @@ export class CustomerRepository {
         name: r[1],
         level: (r[2] || 'BASIC') as any,
         shippingZone: r[3] || 'ZONE1',
-        currency: r[4] || 'EUR'
+        currency: r[4] || 'EUR',
+        country: r[5] || 'FR'
       };
     }
 

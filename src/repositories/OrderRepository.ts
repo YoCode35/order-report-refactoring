@@ -20,7 +20,10 @@ export class OrderRepository {
           unitPrice: parseFloat(r[4]),
           date: r[5],
           promoCode: r[6] || '',
-          time: r[7] || '12:00'
+          time: r[7] || '12:00',
+          subtotal: function (subtotal: any, level: string): unknown {
+            throw new Error('Function not implemented.');
+          }
         });
       } catch {
         continue;

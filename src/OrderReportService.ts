@@ -9,17 +9,17 @@ export class OrderReportService {
     private discountService: DiscountService,
     private taxService: TaxService,
     private reportBuilder: ReportBuilder
-  ) {}
+  ) { }
 
   generate(order: Order, customer: Customer): string {
     const discount = this.discountService.compute(
-      order.subtotal,
+      Number(order.subtotal),
       customer.level
     );
 
     const taxed =
-      (order.subtotal - discount) +
-      this.taxService.compute(order.subtotal - discount);
+      (Number(order.subtotal) - discount) +
+      this.taxService.compute(Number(order.subtotal) - discount);
 
     return this.reportBuilder.build(taxed);
   }
