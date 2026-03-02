@@ -1,12 +1,6 @@
 import { CustomerLevel } from '../domain/Customer';
-import { Order } from '../domain/Order';
 
 export class DiscountService {
-applyVolumeDiscount(order: Order, amount: number): number {
-  if (order.qty > 10) return amount * 0.9;
-  if (order.qty > 5) return amount * 0.95;
-  return amount;
-}
   compute(subtotal: number, level: CustomerLevel): number {
     if (subtotal > 1000 && level === 'PREMIUM') {
       return subtotal * 0.2;

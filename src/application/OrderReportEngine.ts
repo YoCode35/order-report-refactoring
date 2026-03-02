@@ -1,4 +1,3 @@
-// OrderReportEngine.ts
 import { Order } from '../domain/Order';
 import { Customer } from '../domain/Customer';
 import { Product } from '../domain/Product';
