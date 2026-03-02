@@ -1,0 +1,7 @@
+Set-Content .gitignore "node_modules/
+dist/
+*.js.map
+*.d.ts
+*.d.ts.map
+output.json
+.env"
