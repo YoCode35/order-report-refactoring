@@ -34,13 +34,15 @@ data/
 ├── customers.csv
 ├── orders.csv
 ├── products.csv
-├── products.csv
 ├── promotions.csv
 └── shipping_zones.csv
 legacy/
 └── orderReportLegacy.ts           # Code original (non modifié)
 tests/
 ├── DiscountService.test.ts
+├── LoyaltyService.test.ts
+├── PromotionService.test.ts
+├── ShippingService.test.ts
 ├── TaxService.test.ts
 └── goldenMaster.test.ts           # Vérifie la parité avec le legacy
 ```
@@ -70,12 +72,15 @@ npm test
 Résultat attendu :
 
 ```
+PASS  tests/LoyaltyService.test.ts
+PASS  tests/ShippingService.test.ts
+PASS  tests/goldenMaster.test.ts
+PASS  tests/PromotionService.test.ts
 PASS  tests/DiscountService.test.ts
 PASS  tests/TaxService.test.ts
-PASS  tests/goldenMaster.test.ts
 
-Test Suites: 3 passed, 3 total
-Tests:       4 passed, 4 total
+Test Suites: 6 passed, 6 total
+Tests:       24 passed, 24 total
 ```
 
 ## Lancer le rapport
